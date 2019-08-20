@@ -9,6 +9,7 @@ import { MyGamesComponent } from './my-games/my-games.component';
 import { GameDashboardComponent } from './game-dashboard/game-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { MovesListComponent } from './moves-list/moves-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     MyGamesComponent,
     GameDashboardComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    MovesListComponent
   ],
   imports: [
     BrowserModule,
