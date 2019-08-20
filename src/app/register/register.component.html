@@ -1,0 +1,53 @@
+<div class="container">
+    <br>
+    <div class="card ml-auto mr-auto w-50">
+        <div class="card-header">
+            <h5>Register Form</h5>
+        </div>
+        <div class="card-body">
+            <form class="form" #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="email"
+                        required #email="ngModel" [email]="true" />
+                    <div [hidden]="email.valid || !email.touched" class="alert alert-danger incorrect">
+                        Email is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input minlength="5" type="text" class="form-control" placeholder="display name"
+                        [(ngModel)]="displatNameField" name="displayName" required #displayName="ngModel" />
+                    <div [hidden]="displayName.valid || !displayName.touched" class="alert alert-danger incorrect">
+                        Name should be atleast 5 characters long
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input (blur)="complex()" minlength="6" type="password" class="form-control" placeholder="password"
+                        [(ngModel)]="passwordField" name="password" required #password="ngModel" />
+                    <div [hidden]="(password.valid && complexity) || !password.touched"
+                        class="alert alert-danger incorrect">
+                        Invalid format
+                    </div>
+                    <em style="font-size: 13px;">*Password should contain atleast 1 uppercase and lowercase letters, 1
+                        number and 1 special character. Total length should be atleast 6 characters</em>
+                </div>
+
+                <div class="form-group">
+                    <input (blur)="match()" type="password" class="form-control" placeholder="retype password"
+                        [(ngModel)]="rePasswordField" name="rePassword" required #rePassword="ngModel" />
+                    <div *ngIf="(!rePassword.valid || !passwordsMatch) && (rePassword.touched)"
+                        class="alert alert-danger incorrect">
+                        Both passwords need to match
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="!(registerForm.form.valid && passwordsMatch && complexity)">Register</button>
+                <em style="font-size: 13px;">*By clicking register you agree to the <a href="#">Terms and Conditions</a>
+                    of the website</em>
+            </form>
+        </div>
+    </div>
+</div>
