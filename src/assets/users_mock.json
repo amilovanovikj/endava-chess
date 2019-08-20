@@ -1,0 +1,22 @@
+[
+    {
+        "username":"zokiv",
+        "isLoggedIn":"true"
+    },
+    {
+        "username":"btodevski",
+        "isLoggedIn":"true"        
+    },
+    {
+        "username":"rproesmans",
+        "isLoggedIn":"false"        
+    },
+    {
+        "username":"ddabovski",
+        "isLoggedIn":"false"        
+    },
+    {
+        "username":"testuser",
+        "isLoggedIn":"false"
+    }
+]
