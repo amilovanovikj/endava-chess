@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  {path:"home", component:LoginComponent},
-  {path:"dashboard", component:GameDashboardComponent},
-  {path:"", redirectTo:"dashboard", pathMatch:"full"},
-  {path:"**", component:PageNotFoundComponent}
+  {path: 'home', component: LoginComponent},
+  {path: 'dashboard', component: GameDashboardComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

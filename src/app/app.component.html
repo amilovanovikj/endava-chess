@@ -1,9 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm  bg-light">
+  <span id="userName" class="navbar-text ml-auto pr-2">Welcome, {{username}}</span>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a id="logout" class="nav-link" href="#">Logout</a>
+    </li>
+  </ul>
+</nav>
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 
-<div class="container">
-<router-outlet></router-outlet>
-</div>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
