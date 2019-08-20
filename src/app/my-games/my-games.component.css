@@ -1,3 +1,13 @@
 /* #mygamesContainer{
     background-color: darkseagreen;
 } */
+
+tbody{
+    display:inline-block;
+    overflow:auto;
+    height:9em;
+}
+
+thead tr{
+    display:block;
+}
