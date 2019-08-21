@@ -2,7 +2,7 @@
     <div id="mygamesCard" class="card mt-3">
         <h5 class="card-text mb-0 mt-1">My Games</h5>
         <div style="overflow-x: auto" class="card-body pt-2">
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <!-- Table Header -->
                 <thead>
                     <tr>
@@ -14,10 +14,12 @@
                 <!-- Table Body -->
                 <tbody>
                     <tr *ngFor="let game of gamesList" class="small">
-                        <td>{{game.opponent}}</td>
-                        <td [style.color]="game.status.startsWith('m') ? '#33B8FF' : 'black'"
-                            [style.font-weight]="game.status.startsWith('m') ? 'bold' : ''">{{game.status}}</td>
-                        <td>{{game.started_date}}</td>
+                        <a [routerLink]="['/dashboard/game', game.id]">
+                            <td>{{game.opponent}}</td>
+                            <td [style.color]="game.status.startsWith('m') ? '#33B8FF' : 'black'"
+                                [style.font-weight]="game.status.startsWith('m') ? 'bold' : ''">{{game.status}}</td>
+                            <td>{{game.started_date}}</td>
+                        </a>
                     </tr>
                 </tbody>
             </table>

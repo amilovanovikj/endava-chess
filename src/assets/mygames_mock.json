@@ -2,21 +2,25 @@
     {
         "opponent": "rproesmans",
         "status": "my move",
-        "started_date": "12.08.2019"
+        "started_date": "12.08.2019",
+        "id": "1"
     },
     {
         "opponent": "ldimovski",
         "status": "invitation recieved",
-        "started_date": "14.08.2019"
+        "started_date": "14.08.2019",
+        "id": "2"
     },
     {
         "opponent": "aandonov",
         "status": "opponent's move",
-        "started_date": "20.08.2019"
+        "started_date": "20.08.2019",
+        "id": "3"
     },
     {
         "opponent": "amilovanovikj",
         "status": "invitation sent",
-        "started_date": "19.08.2019"
+        "started_date": "19.08.2019",
+        "id": "4"
     }
 ]

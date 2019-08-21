@@ -12,8 +12,11 @@ const routes: Routes = [
   {
     path: 'dashboard', component: GameDashboardComponent,
     children: [
-      { path: ':id', component: GameComponent },
-      { path: '', redirectTo: '0', pathMatch: 'full' }
+      /* Can use both ../game/:id or just ../:id, stylistic choice */
+      { path: 'game/:id', component: GameComponent },
+      /* If using ../game/:id, redirect any empty game IDs to the empty/base game */
+      { path: 'game', redirectTo: 'game/0', pathMatch: 'full' },
+      { path: '', redirectTo: 'game/0', pathMatch: 'full' }
     ]
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },

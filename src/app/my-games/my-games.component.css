@@ -1,6 +1,7 @@
-/* #mygamesContainer{
-    background-color: darkseagreen;
-} */
+a{
+    text-decoration: none;
+    color:black;
+}
 
 tbody{
     display:block;
