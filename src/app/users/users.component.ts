@@ -11,6 +11,7 @@ export class UsersComponent implements OnInit {
   selectSize = 3;
   userList: IUser[];
   filteredUserList: IUser[];
+  selectedUser: string = null;
 
   // tslint:disable-next-line: variable-name
   _userListFilter: string;
@@ -25,6 +26,14 @@ export class UsersComponent implements OnInit {
   performFilter(value: string): IUser[] {
     value = value.toLocaleLowerCase();
     return this.userList.filter((user: IUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
+  }
+
+  userClicked() {
+    console.log(this.selectedUser);
+  }
+
+  hasSelected() {
+    return !!this.selectedUser;
   }
 
   constructor(private http: HttpClient) { }

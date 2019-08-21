@@ -9,7 +9,7 @@ import { IGame } from '../models/IGame';
 })
 export class MyGamesComponent implements OnInit {
 
-  gamesList: IGame[]
+  gamesList: IGame[];
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class MyGamesComponent implements OnInit {
     this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
       response => {
         this.gamesList = response;
-        console.log(this.gamesList)        
+        console.log(this.gamesList);
       }
     );
   }

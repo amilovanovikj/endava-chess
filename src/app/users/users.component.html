@@ -10,13 +10,13 @@
                         placeholder="Search..." [(ngModel)]="userListFilter">
                 </div>
 
-                <select [size]="selectSize" multiple="false" class="form-control my-1">
+                <select [size]="selectSize" class="form-control my-1" [(ngModel)]="selectedUser">
                         <option *ngFor="let user of filteredUserList"
                             [value]="user.username" [style.color]="user.isLoggedIn === 'true' ? 'green' : 'red'">
                             {{user.username}}</option>
                 </select>
 
-                <button class="btn btn-primary pull-right my-2">Invite</button>
+                <button (click)="userClicked()" class="btn btn-primary pull-right my-2" [disabled]="!hasSelected()">Invite</button>
                 
             </div>
         </div>

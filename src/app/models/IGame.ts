@@ -1,7 +1,8 @@
-export interface IGame{
+export interface IGame {
     opponent: string;
     status: string;
-    date: string;    
+    started_date: string;
+    id: number;
     /* fen?: string;
     pgn?: string; */
 }
