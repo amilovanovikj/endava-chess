@@ -10,6 +10,22 @@ import { HttpClient } from '@angular/common/http';
 export class UsersComponent implements OnInit {
   selectSize = 3;
   userList: IUser[];
+  filteredUserList: IUser[];
+
+  // tslint:disable-next-line: variable-name
+  _userListFilter: string;
+  get userListFilter() {
+    return this._userListFilter;
+  }
+  set userListFilter(value: string) {
+    this._userListFilter = value;
+    this.filteredUserList = this.userListFilter ? this.performFilter(this.userListFilter) : this.userList;
+  }
+
+  performFilter(value: string): IUser[] {
+    value = value.toLocaleLowerCase();
+    return this.userList.filter((user: IUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +34,11 @@ export class UsersComponent implements OnInit {
       response => {
         this.userList = response;
         console.log(this.userList);
+      },
+      () => { },
+      () => {
+        this.filteredUserList = this.userList;
+        this.userListFilter = '';
       }
     );
   }

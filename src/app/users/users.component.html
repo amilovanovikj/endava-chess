@@ -6,13 +6,14 @@
             <div class="form-group">
                 <div class="form-group searchbox">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" id="userSearch" placeholder="Search..." name="userSearch">
+                    <input type="text" class="form-control" id="userSearch"name="userSearch"
+                        placeholder="Search..." [(ngModel)]="userListFilter">
                 </div>
 
                 <select [size]="selectSize" multiple="false" class="form-control my-1">
-                        <option *ngFor="let user of userList"
+                        <option *ngFor="let user of filteredUserList"
                             [value]="user.username" [style.color]="user.isLoggedIn === 'true' ? 'green' : 'red'">
-                            {{user.username}}-{{user.isLoggedIn}}</option>
+                            {{user.username}}</option>
                 </select>
 
                 <button class="btn btn-primary pull-right my-2">Invite</button>
