@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { MovesListComponent } from './moves-list/moves-list.component';
 import { RegisterComponent } from './register/register.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     PageNotFoundComponent,
     LoginComponent,
     MovesListComponent,
-    RegisterComponent
+    RegisterComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
