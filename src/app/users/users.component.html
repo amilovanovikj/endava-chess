@@ -16,9 +16,34 @@
                             {{user.username}}</option>
                 </select>
 
-                <button (click)="userClicked()" class="btn btn-primary pull-right my-2" [disabled]="!hasSelected()">Invite</button>
+                <button (click)="userClicked()" class="btn btn-primary pull-right my-2" [disabled]="!hasSelected()" data-toggle="modal" data-target="#exampleModalCenter">Invite</button>
                 
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Pick your color</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <em>Playing against {{selectedUser}}</em>
+      </div>
+      <div class="modal-footer mr-auto ml-auto">
+        <button type="button" class="btn btn-light btn-lg" style="border: 1px grey solid; width: 150px;" data-dismiss="modal" (click)="colorClicked('w')">White</button>
+        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('b')">Black</button>
+        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('r')">Random</button>
+      </div>
+    </div>
+  </div>
 </div>

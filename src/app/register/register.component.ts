@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { IUser } from '../models/IUser';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +11,10 @@ export class RegisterComponent implements OnInit {
   displatNameField:string;
   emailField:string;
   rePasswordField:string;
-
   passwordsMatch:boolean;
   complexity:boolean;
+
+  user:IUser;
   constructor() { }
 
   ngOnInit() {
@@ -22,19 +24,12 @@ export class RegisterComponent implements OnInit {
 
   register(value)
   {
-    console.log(value);
+    this.match();
+    this.passwordsMatch ? console.log(value) : this.passwordsMatch = false;
   }
   match()
   {
-    if(this.passwordField == this.rePasswordField)
-    {
-      this.passwordsMatch = true;
-      
-    }
-    else
-    {
-      this.passwordsMatch = false;
-    }
+    this.passwordField == this.rePasswordField ? this.passwordsMatch = true : this.passwordsMatch = false;
   }
   complex()
   {

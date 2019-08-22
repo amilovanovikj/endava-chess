@@ -3,4 +3,5 @@ export interface IUser {
     displayname: string;
     email: string;
     isLoggedIn: boolean;
+    email: string;
 }
