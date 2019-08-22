@@ -1,6 +1,13 @@
-<div id="boardContainer">
-    <div id="board">
-        <p>board works!</p>
-        <p *ngIf="game">Game info: {{game.id}}-{{game.opponent}}-{{game.started_date}}</p>
+<div id="board">
+    <div id="boardContent">
+        <!-- <p>board works!</p> -->
+        <table style="height:100%; width:100%">
+            <tr *ngFor="let i of [0,1,2,3,4,5,6,7]">
+                <td *ngFor="let j of [0,1,2,3,4,5,6,7]">
+                    <app-tile class="tile"></app-tile>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
+<p *ngIf="game">Game info: {{game.id}}-{{game.opponent}}-{{game.started_date}}</p>

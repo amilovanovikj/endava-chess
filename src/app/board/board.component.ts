@@ -11,16 +11,18 @@ import { IGame } from '../models/IGame';
 export class BoardComponent implements OnInit {
   game: IGame;
   id: number;
+  boardModel: any;
 
-  fetchGame(id: number): void{
+  fetchGame(id: number): void {
     this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
       response => {
         this.game = response.find((game) => +game.id === id);
       },
       () => {},
       () => {
-        //console.log(this.game);
-        if(!this.game){ this.router.navigate(['/dashboard/game/0'])}
+        // console.log(this.game);
+        if (!this.game) {this.router.navigate(['/dashboard/game/0']); }
+        console.log(this.boardModel);
       }
     );
   }
@@ -35,12 +37,6 @@ export class BoardComponent implements OnInit {
         this.fetchGame(this.id);
       }
     );
-    /* this.id = +this.route.snapshot.paramMap.get('id'); */
-    /* this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
-      response => {
-        this.game = response[+this.route.snapshot.paramMap.get('id') - 1];
-      }
-    ); */
   }
 
 }

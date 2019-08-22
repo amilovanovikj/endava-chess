@@ -1,4 +1,24 @@
-#boardContainer{
+#board{
+    margin:0 auto;
     background-color: cornflowerblue;
-    height:500px;
+    width:80%;
+    padding-top: 80%;
+    position: relative;
+}
+
+#boardContent{
+    /* width:100%;
+    height:100%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.tile{
+    display:block;
+    height:100%;
+    width:100%;
+    border:1px solid red;
 }
