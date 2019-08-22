@@ -28,8 +28,12 @@ export class UsersComponent implements OnInit {
     return this.userList.filter((user: IUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
   }
 
-  userClicked() {
+  userClicked() { // da se brise??
     console.log(this.selectedUser);
+  }
+
+  colorClicked(color) {
+    console.log( "Playing against:" , this.selectedUser, " with ", color, "color");
   }
 
   hasSelected() {
@@ -45,7 +49,7 @@ export class UsersComponent implements OnInit {
         console.log(this.userList);
       },
       () => { },
-      () => {
+      () => {  // ??
         this.filteredUserList = this.userList;
         this.userListFilter = '';
       }
