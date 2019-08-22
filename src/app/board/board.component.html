@@ -2,9 +2,10 @@
     <div id="boardContent">
         <!-- <p>board works!</p> -->
         <table style="height:100%; width:100%">
-            <tr *ngFor="let i of [0,1,2,3,4,5,6,7]">
-                <td *ngFor="let j of [0,1,2,3,4,5,6,7]">
-                    <app-tile class="tile"></app-tile>
+            <tr *ngFor="let i of [8,7,6,5,4,3,2,1]">
+                <td *ngFor='let j of ["a","b","c","d","e","f","g","h"]'>
+                    <app-tile class="tile" (clicked)="onTileClick($event)"
+                        [row]="i" [column]="j"></app-tile>
                 </td>
             </tr>
         </table>

@@ -1,2 +1,4 @@
 <!-- <p>tile works!</p> -->
-<div class="tile"></div>
+<div [style.background-color]="getColor()" id="tileContainer" (click)="onClick()">
+    <img *ngIf="piece" [src]="getPieceImage()">
+</div>
