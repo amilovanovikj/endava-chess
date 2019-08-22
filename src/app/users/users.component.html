@@ -13,7 +13,8 @@
                 <select [size]="selectSize" class="form-control my-1" [(ngModel)]="selectedUser">
                         <option *ngFor="let user of filteredUserList"
                             [value]="user.username" [style.color]="user.isLoggedIn === 'true' ? 'green' : 'red'">
-                            {{user.username}}</option>
+                            {{user.username}} <span *ngIf="user.isLoggedIn === 'true' ? true : false">&#9989;</span>
+                            <span *ngIf="user.isLoggedIn === 'false' ? true : false">&#9940;</span> </option>
                 </select>
 
                 <button (click)="userClicked()" class="btn btn-primary pull-right my-2" [disabled]="!hasSelected()" data-toggle="modal" data-target="#exampleModalCenter">Invite</button>

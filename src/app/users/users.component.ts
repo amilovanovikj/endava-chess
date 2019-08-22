@@ -28,8 +28,8 @@ export class UsersComponent implements OnInit {
     return this.userList.filter((user: IUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
   }
 
-  userClicked() { // da se brise??
-    console.log(this.selectedUser);
+  userClicked(user) { // da se brise??
+    //console.log(this.selectedUser);
   }
 
   colorClicked(color) {
