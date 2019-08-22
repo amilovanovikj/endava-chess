@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Init'){
             steps{
+                sh "rm -rf endava-chess"
                 sh "git clone https://github.com/damjan-dabovski/endava-chess"
             }
         }
