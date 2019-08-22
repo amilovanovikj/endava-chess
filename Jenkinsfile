@@ -6,6 +6,11 @@ pipeline {
                 sh "git clone https://github.com/damjan-dabovski/endava-chess"
             }
         }
+        stage('Install'){
+            steps{
+                sh "npm install"
+            }
+        }
         stage('Build'){
             steps{
                 sh "cd endava-chess"
