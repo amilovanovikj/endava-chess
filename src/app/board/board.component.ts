@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IGame } from '../models/IGame';
+import { TileComponent } from './tile/tile.component';
 
 @Component({
   selector: 'app-board',
@@ -11,7 +12,6 @@ import { IGame } from '../models/IGame';
 export class BoardComponent implements OnInit {
   game: IGame;
   id: number;
-  boardModel: any;
 
   fetchGame(id: number): void {
     this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
@@ -20,12 +20,12 @@ export class BoardComponent implements OnInit {
       },
       () => {},
       () => {
-        // console.log(this.game);
         if (!this.game) {this.router.navigate(['/dashboard/game/0']); }
-        console.log(this.boardModel);
       }
     );
   }
+
+  onTileClick(tile: TileComponent): void {}
 
   constructor(private http: HttpClient,
               private route: ActivatedRoute, private router: Router) { }
