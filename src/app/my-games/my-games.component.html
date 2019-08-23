@@ -15,10 +15,10 @@
                 <tbody>
                     <tr *ngFor="let game of gamesList" class="small">
                         <a [routerLink]="['/dashboard/game', game.id]">
-                            <td>{{game.opponent}}</td>
+                            <td>{{game.opponentName}}</td>
                             <td [style.color]="game.status.startsWith('m') ? '#33B8FF' : 'black'"
                                 [style.font-weight]="game.status.startsWith('m') ? 'bold' : ''">{{game.status}}</td>
-                            <td>{{game.started_date}}</td>
+                            <td>{{game.dateStarted}}</td>
                         </a>
                     </tr>
                 </tbody>
