@@ -1,10 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Init'){
+        stage ('Checkout'){
             steps{
-                sh "rm -rf endava-chess"
-                sh "git clone https://github.com/damjan-dabovski/endava-chess"
+                checkout scm
             }
         }
         stage('Install'){
