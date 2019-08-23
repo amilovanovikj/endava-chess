@@ -17,7 +17,7 @@
                             <span *ngIf="user.isLoggedIn === 'false' ? true : false">&#9940;</span> </option>
                 </select>
 
-                <button id="invite" (click)="userClicked()" class="btn btn-primary pull-right my-2"
+                <button id="invite" class="btn btn-primary pull-right my-2"
                  [disabled]="!hasSelected()" data-toggle="modal" data-target="#exampleModalCenter">Invite</button>
                 
             </div>
