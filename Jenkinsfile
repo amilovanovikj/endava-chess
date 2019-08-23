@@ -8,13 +8,12 @@ pipeline {
         }
         stage('Install'){
             steps{
-                sh "cd endava-chess"
                 sh "npm install"
             }
         }
         stage('Build'){
             steps{
-                sh "ng build --prod --build-optimizer"
+                sh '$(npm bin)/ng build --prod --build-optimizer'
             }
         }
         stage('Copy to EC2'){
