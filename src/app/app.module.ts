@@ -13,7 +13,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { MovesListComponent } from './moves-list/moves-list.component';
 import { RegisterComponent } from './register/register.component';
-import { GameComponent } from './game/game.component';
 import { TileComponent } from './board/tile/tile.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { TileComponent } from './board/tile/tile.component';
     LoginComponent,
     MovesListComponent,
     RegisterComponent,
-    GameComponent,
     TileComponent
   ],
   imports: [

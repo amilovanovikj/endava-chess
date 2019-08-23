@@ -1,5 +1,5 @@
-<!-- <p>tile works!</p> -->
 <div [style.background-color]="getColor()" id="tileContainer" (click)="onClick()">
-    <img *ngIf="piece" [src]="getPieceImage()">
-    1
+    <img [id]="coordinates+'piece'" *ngIf="piece" [src]="this.piece.draw()">
+    <!-- text paragraph for debugging -->
+    <p *ngIf="text">{{text}}</p>
 </div>

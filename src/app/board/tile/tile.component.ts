@@ -7,19 +7,24 @@ import { IPiece, Color } from 'src/app/models/IPiece';
   styleUrls: ['./tile.component.css']
 })
 export class TileComponent implements OnInit {
+
+  @Input() coordinates: string;
   @Input() row: any;
   @Input() column: string;
   @Output() clicked = new EventEmitter();
+  // debug text
+  @Input() text: string;
 
   color: Color;
   piece: IPiece = null;
 
   onClick(): void {
-    console.log(`${this.column}${this.row}`);
+    /* console.log(`${this.column}${this.row}`); */
+    console.log(this.coordinates);
     this.clicked.emit(this);
   }
 
-  getPieceImage(): string {
+  getPieceImage(): string | null {
     if (this.piece) {
       return this.piece.imageUri;
     }
@@ -27,9 +32,9 @@ export class TileComponent implements OnInit {
 
   getColor(): string {
     if (this.column.charCodeAt(0) % 2 === 0) {
-      return this.row % 2 ? 'white' : 'black';
+      return this.row % 2 ? Color.White : Color.Black;
     } else {
-      return this.row % 2 ? 'black' : 'white';
+      return this.row % 2 ? Color.Black : Color.White;
     }
   }
 

@@ -1,42 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { IGame } from '../models/IGame';
 import { TileComponent } from './tile/tile.component';
+import { Pawn } from '../models/pieces/Pawn';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent implements OnInit, AfterViewInit {
+  @ViewChildren(TileComponent) tiles: QueryList<TileComponent>;
+  tileMap = new Map<string, TileComponent>();
   game: IGame;
-  id: number;
 
-  fetchGame(id: number): void {
-    this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
-      response => {
-        this.game = response.find((game) => +game.id === id);
-      },
-      () => {},
-      () => {
-        if (!this.game) {this.router.navigate(['/dashboard/game/0']); }
-      }
-    );
-  }
+  onTileClick(tile: TileComponent): void { }
 
-  onTileClick(tile: TileComponent): void {}
+  constructor() { }
 
-  constructor(private http: HttpClient,
-              private route: ActivatedRoute, private router: Router) { }
+  ngOnInit() { }
 
-  ngOnInit() {
-    this.route.paramMap.subscribe(
-      params => {
-        this.id = +params.get('id');
-        this.fetchGame(this.id);
-      }
-    );
+  ngAfterViewInit() {
+    console.log(this.tiles.toArray());
+    /* this.tiles.toArray()[0].piece = new Pawn(); */
+    for (const tile of this.tiles.toArray()) {
+      this.tileMap.set(tile.coordinates, tile);
+    }
+    console.log(this.tileMap);
   }
 
 }

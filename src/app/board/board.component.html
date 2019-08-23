@@ -1,14 +1,15 @@
+<p>testOpponent</p>
 <div id="board">
     <div id="boardContent">
-        <!-- <p>board works!</p> -->
         <table style="height:100%; width:100%">
             <tr *ngFor="let i of [8,7,6,5,4,3,2,1]">
                 <td *ngFor='let j of ["a","b","c","d","e","f","g","h"]'>
                     <app-tile class="tile" (clicked)="onTileClick($event)"
-                        [row]="i" [column]="j"></app-tile>
+                        [coordinates]="j+i" [row]="i" [column]="j"  [id]="j+i"></app-tile>
                 </td>
             </tr>
         </table>
     </div>
 </div>
-<p *ngIf="game">Game info: {{game.id}}-{{game.opponent}}-{{game.started_date}}</p>
+<p>testPlayer</p>
+<!-- <p *ngIf="game">Game info: {{game.id}}-{{game.opponent}}-{{game.started_date}}</p> -->

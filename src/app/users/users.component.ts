@@ -29,7 +29,7 @@ export class UsersComponent implements OnInit {
   }
 
   colorClicked(color) {
-    console.log( "Playing against:" , this.selectedUser, " with ", color, "color");
+    console.log('Playing against:', this.selectedUser, ' with ', color, 'color');
   }
 
   hasSelected() {
