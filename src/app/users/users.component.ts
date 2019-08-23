@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../models/IUser';
+import { ActiveUser } from '../models/ActiveUser';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersComponent implements OnInit {
   selectSize = 3;
-  userList: IUser[];
-  filteredUserList: IUser[];
+  userList: ActiveUser[];
+  filteredUserList: ActiveUser[];
   selectedUser: string = null;
 
   // tslint:disable-next-line: variable-name
@@ -23,9 +23,9 @@ export class UsersComponent implements OnInit {
     this.filteredUserList = this.userListFilter ? this.performFilter(this.userListFilter) : this.userList;
   }
 
-  performFilter(value: string): IUser[] {
+  performFilter(value: string): ActiveUser[] {
     value = value.toLocaleLowerCase();
-    return this.userList.filter((user: IUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
+    return this.userList.filter((user: ActiveUser) => user.username.toLocaleLowerCase().indexOf(value) !== -1);
   }
 
   colorClicked(color) {
@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<IUser[]>('../assets/users_mock.json').subscribe(
+    this.http.get<ActiveUser[]>('../assets/users_mock.json').subscribe(
       response => {
         this.userList = response;
         console.log(this.userList);
