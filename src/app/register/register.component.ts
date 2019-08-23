@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IUser } from '../models/IUser';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
   rePasswordValid: boolean;
 
-  constructor() { }
+  constructor(private http: HttpClient, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.passwordsMatch = false;
@@ -78,6 +80,11 @@ export class RegisterComponent implements OnInit {
   Register(value) {
     this.match();
     this.passwordsMatch ? console.log(value) : this.passwordsMatch = false;
+    this.userService.registerUser(value)
+      .subscribe(
+        data => {
+          this.router.navigate(['/login']);
+        });
   }
 
   match() {

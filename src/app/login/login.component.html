@@ -7,7 +7,7 @@
         <div class="card-body">
             <form class="form" #loginForm="ngForm" (ngSubmit)="Login(loginForm.value)">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="email"
+                    <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="username"
                         required #email="ngModel" [email]="true" (ngModelChange)="EmailChange()" />
                     <div [hidden]="emailNotEmpty || !email.touched" class="alert alert-danger"
                         style="height: 35px; font-size: 15px; padding: 5px">

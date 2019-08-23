@@ -8,7 +8,7 @@
             <form class="form" #registerForm="ngForm" (ngSubmit)="Register(registerForm.value)">
 
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="email"
+                    <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="username"
                         #email="ngModel" [email]="true" (ngModelChange)="EmailChange()" />
                     <div *ngIf="!emailValid && emailNotEmpty" class="alert alert-danger incorrect">
                             Email is not valid

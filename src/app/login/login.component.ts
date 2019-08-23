@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.passwordField === "" ? this.passwordNotEmpty = false : this.passwordNotEmpty = true;
   }
 
-  login(value) {
+  Login(value) {
     console.log(value.password)
     this.userService.loginUser(value)
       .subscribe(
