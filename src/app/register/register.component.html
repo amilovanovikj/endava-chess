@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input (blur)="passwordValidator()" minlength="6" type="password" class="form-control" placeholder="password"
+                    <input minlength="6" type="password" class="form-control" placeholder="password"
                         [(ngModel)]="passwordField" name="password" required #password="ngModel" (ngModelChange)="PasswordChange()"/>
                     <div *ngIf="!passwordValid && passwordNotEmpty" class="alert alert-danger incorrect">
                         Invalid format
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input (blur)="match()" type="password" class="form-control" placeholder="retype password"
+                    <input type="password" class="form-control" placeholder="retype password"
                         [(ngModel)]="rePasswordField" name="rePassword" required #rePassword="ngModel" (ngModelChange)="RePasswordChange()"/>
                     <div [hidden]="rePasswordValid || !rePassword.touched" class="alert alert-danger incorrect">
                         Both passwords need to match
