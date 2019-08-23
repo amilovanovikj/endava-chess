@@ -1,5 +1,5 @@
 <div [style.background-color]="getColor()" id="tileContainer" (click)="onClick()">
-    <img [id]="coordinates+'piece'" *ngIf="piece" [src]="this.piece.draw()">
+    <i class="fas fa-chess-pawn"></i>
     <!-- text paragraph for debugging -->
     <p *ngIf="text">{{text}}</p>
 </div>
