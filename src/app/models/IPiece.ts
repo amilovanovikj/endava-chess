@@ -1,6 +1,6 @@
 export enum Color {
-    White,
-    Black
+    White = 'white',
+    Black = 'black',
 }
 
 export interface IPiece {

@@ -1,10 +1,13 @@
-<!-- <p>game-dashboard works!</p> -->
 <div class="row">
     <div class="col-md-3">
         <app-users></app-users>
         <app-my-games></app-my-games>
     </div>
-    <div class="col-md-9 order-sm-first order-md-3">
-        <router-outlet></router-outlet>
+    <app-board class="col-md-7 order-sm-first order-md-3"></app-board>
+    <div class="col-md-2 order-md-last">
+        <app-moves-list></app-moves-list>
+        <div style="position:absolute; left:0; right:0; bottom:10%; margin: 0 auto;">
+            <button id="cancel" class="btn btn-danger">Cancel Game</button>
+        </div>
     </div>
 </div>

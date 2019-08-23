@@ -1,6 +1,5 @@
 #board{
     margin:0 auto;
-    /* background-color: cornflowerblue; */
     width:80%;
     padding-top: 80%;
     position: relative;
@@ -19,5 +18,4 @@
     display:block;
     height:100%;
     width:100%;
-    /* border:1px solid red; */
 }

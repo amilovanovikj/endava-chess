@@ -1,8 +1,7 @@
 export interface IGame {
   id: number;
-  opponentName: string;
+  opponent: string;
   status: string;
-  dateStarted: string;
+  started_date: string;
   state: string;
-  /*pgn?: string; */
 }

@@ -13,7 +13,7 @@ export class MyGamesComponent implements OnInit {
   game: IGame;
 
   constructor(private http: HttpClient) {
-    this.connect();
+    /*this.connect();*/
   }
 
   connect(): void {
@@ -34,11 +34,11 @@ export class MyGamesComponent implements OnInit {
       }
     );*/
 
-     this.http.get<IGame[]>('http://localhost:8080/game/user-games/1').subscribe(
+     /*this.http.get<IGame[]>('http://localhost:8080/game/user-games/1').subscribe(
       response => {
         this.gamesList = response;
         console.log(response); }
-    );
+     );*/
   }
 
 

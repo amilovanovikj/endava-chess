@@ -17,7 +17,8 @@
                             <span *ngIf="user.isLoggedIn === 'false' ? true : false">&#9940;</span> </option>
                 </select>
 
-                <button (click)="userClicked()" class="btn btn-primary pull-right my-2" [disabled]="!hasSelected()" data-toggle="modal" data-target="#exampleModalCenter">Invite</button>
+                <button id="invite" (click)="userClicked()" class="btn btn-primary pull-right my-2"
+                 [disabled]="!hasSelected()" data-toggle="modal" data-target="#exampleModalCenter">Invite</button>
                 
             </div>
         </div>
@@ -41,9 +42,9 @@
         <em>Playing against {{selectedUser}}</em>
       </div>
       <div class="modal-footer mr-auto ml-auto">
-        <button type="button" class="btn btn-light btn-lg" style="border: 1px grey solid; width: 150px;" data-dismiss="modal" (click)="colorClicked('w')">White</button>
-        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('b')">Black</button>
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('r')">Random</button>
+        <button id="buttonWhite" type="button" class="btn btn-light btn-lg" style="border: 1px grey solid; width: 150px;" data-dismiss="modal" (click)="colorClicked('w')">White</button>
+        <button id="buttonBlack" type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('b')">Black</button>
+        <button id="buttonRandom" type="button" class="btn btn-info btn-lg" data-dismiss="modal" style="width: 150px;" (click)="colorClicked('r')">Random</button>
       </div>
     </div>
   </div>

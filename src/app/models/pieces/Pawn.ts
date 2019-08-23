@@ -2,10 +2,9 @@ import { IPiece, Color } from '../IPiece';
 
 export class Pawn implements IPiece {
     color: Color;
-    imageUri: string;
+    imageUri = '../../assets/pawn.png';
 
     draw(): string {
-       this.imageUri = '../../assets/pawn.png';
        return this.imageUri;
     }
 
