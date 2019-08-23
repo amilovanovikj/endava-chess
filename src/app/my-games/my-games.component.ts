@@ -26,6 +26,7 @@ export class MyGamesComponent implements OnInit {
   }
 
 
+  
   ngOnInit() {
     /*this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
       response => {
@@ -34,7 +35,7 @@ export class MyGamesComponent implements OnInit {
       }
     );*/
 
-     this.http.get<IGame[]>('http://localhost:8080/game/user-games/1').subscribe(
+    this.http.get<IGame[]>('http://localhost:8080/game/user-games/1').subscribe(
       response => {
         this.gamesList = response;
         console.log(response); }
