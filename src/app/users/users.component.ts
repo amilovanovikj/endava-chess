@@ -45,7 +45,7 @@ export class UsersComponent implements OnInit {
         console.log(this.userList);
       },
       error => { },
-      () => {  // ??
+      () => { 
         this.filteredUserList = this.userList;
         this.userListFilter = '';
       }

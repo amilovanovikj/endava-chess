@@ -26,6 +26,7 @@ export class MyGamesComponent implements OnInit {
   }
 
 
+  
   ngOnInit() {
     /*this.http.get<IGame[]>('../assets/mygames_mock.json').subscribe(
       response => {

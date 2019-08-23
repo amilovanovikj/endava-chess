@@ -5,11 +5,11 @@
             <h5>Login Form</h5>
         </div>
         <div class="card-body">
-            <form class="form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+            <form class="form" #loginForm="ngForm" (ngSubmit)="Login(loginForm.value)">
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="email" [(ngModel)]="emailField" name="email"
-                        required #email="ngModel" [email]="true" />
-                    <div [hidden]="email.valid || !email.touched" class="alert alert-danger"
+                        required #email="ngModel" [email]="true" (ngModelChange)="EmailChange()" />
+                    <div [hidden]="emailNotEmpty || !email.touched" class="alert alert-danger"
                         style="height: 35px; font-size: 15px; padding: 5px">
                         Email is required
                     </div>
@@ -17,14 +17,14 @@
 
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="password" [(ngModel)]="passwordField"
-                        name="password" required #password="ngModel" />
-                    <div [hidden]="password.valid || !password.touched" class="alert alert-danger"
+                        name="password" required #password="ngModel" (ngModelChange)="PasswordChange()" />
+                    <div [hidden]="passwordNotEmpty || !password.touched" class="alert alert-danger"
                         style="height: 35px; font-size: 15px; padding: 5px">
                         Password is required
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100 " [disabled]="!loginForm.form.valid">Login</button>
+                <button type="submit" class="btn btn-primary w-100 " [disabled]="!(emailNotEmpty && passwordNotEmpty)">Login</button>
             </form>
             <br>
             <a [routerLink]="['/register']" style="float: left">Register</a>
